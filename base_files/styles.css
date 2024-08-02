@@ -16,17 +16,90 @@ body {
 }
 
 header {
-    background-color: #832ad6;
+    background-color: #f1cf34;
     color: #fff;
-    padding: 1rem;
 }
 
 nav a {
-    color: #fff;
+    color: #0051ff;
+    text-align: right;
     text-decoration: none;
-    margin-left: 1rem;
 }
 
 main {
     padding: 2rem;
+}
+
+footer {
+    background-color: #f1cf34;
+    color: #0051ff;
+    padding: 1rem;
+    text-align: center;
+}
+
+#places-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    padding: 20px;
+    justify-content: space-around;
+  }
+
+.place-card {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0051ff;
+    background-color: #f1cf34;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.place-image {
+    border: 1px solid #0051ff;
+    border-radius: 10px;
+    width: 350px;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.review-card {
+    line-height: 200%;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #0051ff;
+    background-color: #f1cf34;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#add-review {
+    text-align: center;
+}
+
+.add-button {
+    width: 600px;
+    height: 30px;
+    font-size: large;
+    background-color: #f1cf34;
+    border-radius: 10px;
+}
+
+.place-info {
+    text-align: center;
+    line-height: 200%;
+    font-size: large;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #0051ff;
+    background-color: #f1cf34;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.place-image-large {
+    border: 1px solid #0051ff;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }

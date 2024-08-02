@@ -7,24 +7,40 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>{% include "header.html" %}</header>
+    <header>
+      <a href="index.html" id="index-link"><img src="/icons/logo.png" alt="hbnb-logo" class="logo" /></a>
+      <nav>
+        <a href="login.html" id="login-link">Login</a>
+      </nav>
+    </header>
     <main>
       <section id="place-details">
-        <!-- Place details will be populated dynamically -->
-      </section>
-      <section id="reviews">
-        <!-- Reviews will be populated dynamically -->
+        <!-- details will be populated dynamically -->  
+        <div class="place-info">
+          <h2>Beautiful Beach House</h2>
+          <img src="/icons/Jakarta_slumhome_2.jpg" alt="Place Image" class="place-image-large"/>
+          <p><strong>Host:</strong> El Kevin</p>
+          <p><strong>Location:</strong> Los Cantes, El Borro States</p>
+          <p><strong>Description:</strong> A beautiful view of the ocean</p>
+          <p><strong>Amenities:</strong> All the watchas wanted</p>
+        </div>
       </section>
       <section id="add-review">
-        <h2>Add a Review</h2>
-        <form id="review-form">
-          <label for="review-text">Review:</label>
-          <textarea id="review-text" name="review-text" required></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
+        <a href="add_review.html" id="add-review-link"><button class = "add-button">Add Review</button></a>
+      </section>
+      <section id="reviews">
+        <h1><strong>Reviews:</strong></h1>
+        <!-- Reviews will be populated dynamically -->
+         <div class="review-card">
+          <p><strong>Name_Placeholder:</strong></p>
+          <p>Review_Of_The_Place</p>
+          <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9734;</p>
+         </div>
       </section>
     </main>
+    <footer>
+      <p>&copy; 2024 HBnB Evolution. All rights reserved.</p>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>
