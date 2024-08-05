@@ -60,12 +60,7 @@ function getCookie(name) {
 }
 
 async function fetchPlaces(token) {
-  const response = await fetch("http://127.0.0.1:5000/data_place", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${token}`,
-    },
-  });
+  const response = await fetch("http://127.0.0.1:5000/data_place");
   if (response.ok) {
     const places = await response.json();
     return displayPlaces(places);
