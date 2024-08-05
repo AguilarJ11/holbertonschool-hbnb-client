@@ -11,19 +11,23 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
 }
 
 header {
     background-color: #f1cf34;
-    color: #fff;
 }
 
 nav a {
     color: #0051ff;
-    text-align: right;
     text-decoration: none;
+}
+
+nav button {
+    background-color: #f1cf34;
+    width: 150px;
+    border-radius: 3px;
 }
 
 main {
@@ -46,16 +50,15 @@ footer {
 
 .place-card {
     margin: 20px;
+    line-height: 200%;
     padding: 10px;
     text-align: center;
-    border: 1px solid #0051ff;
     background-color: #f1cf34;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .place-image {
-    border: 1px solid #0051ff;
     border-radius: 10px;
     width: 350px;
     height: auto;
@@ -66,14 +69,15 @@ footer {
     line-height: 200%;
     margin: 20px;
     padding: 10px;
-    border: 1px solid #0051ff;
     background-color: #f1cf34;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 #add-review {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .add-button {
@@ -84,20 +88,30 @@ footer {
     border-radius: 10px;
 }
 
+#review-field {
+    height: 250px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+#rating {
+    width: 250px;
+    font-size: large;
+}
+
 .place-info {
     text-align: center;
     line-height: 200%;
     font-size: large;
     margin: 20px;
     padding: 10px;
-    border: 1px solid #0051ff;
     background-color: #f1cf34;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .place-image-large {
-    border: 1px solid #0051ff;
     border-radius: 10px;
     width: 500px;
     height: auto;

@@ -4,30 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Review</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../base_files/styles.css" />
   </head>
   <body>
     <header>
-      <a href="index.html" id="index-link"><img src="/icons/logo.png" alt="hbnb-logo" class="logo" /></a>
+      <a href="http://127.0.0.1:5000/places" id="index-link"><img src="../base_files/icons/logo.png" alt="hbnb-logo" class="logo" /></a>
       <nav>
-        <a href="login.html" id="login-link">Login</a>
+        <button><a href="http://127.0.0.1:5000/login" id="login-link">Login</a></button>
+        <button><a href="http://127.0.0.1:5000/places" id="index-link">Home</a></button>
       </nav>
     </header>
     <main>
+      <section id="place-details">
+        <!-- PlaceHolder -->    
+        <div class="place-info">
+          <h2>Beautiful Beach House</h2>
+          <img src="/base_files/icons/Jakarta_slumhome_2.jpg" alt="Place Image" class="place-image-large"/>
+          <p><strong>Host:</strong> El Kevin</p>
+          <p><strong>Location:</strong> Los Cantes, El Borro States</p>
+          <p><strong>Description:</strong> A beautiful view of the ocean</p>
+          <p><strong>Amenities:</strong> All the watchas wanted</p>
+        </div>
+      </section>
       <form id="review-form">
-        <h2>Add a Review</h2>
-        <label for="place">Place:</label>
-        <input type="text" id="place" name="place" readonly />
-
-        <label for="review">Review:</label>
-        <textarea id="review" name="review" required></textarea>
-
-        <button type="submit">Submit</button>
+        <!-- PlaceHolder -->  
+        <h2>Your Review:</h2>
+        <textarea id="review-field" name="review" required></textarea>
+        <h2>Your Rating:</h2>
+        <select id="rating">
+          <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734;</option>
+          <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734;</option>
+          <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734;</option>
+          <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734;</option>
+          <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+        </select>
+        <div id="add-review">
+          <a href="add_review.html" id="add-review-link"><button class = "add-button">Add Review</button></a>
+        </div>
       </form>
     </main>
     <footer>
       <p>&copy; 2024 HBnB Evolution. All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="../base_files/scripts.js"></script>
   </body>
 </html>

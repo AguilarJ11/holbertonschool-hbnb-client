@@ -1,11 +1,11 @@
 from uuid import uuid4
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from flask_cors import CORS
 import json
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../base_files", static_folder="../base_files")
 app.config.from_object('config.Config')
 
 jwt = JWTManager(app)
@@ -17,25 +17,31 @@ with open('data/users.json') as f:
 with open('data/places.json') as f:
     places = json.load(f)
 
+with open('data/countries.json') as f:
+    countries = json.load(f)
+
 # In-memory storage for new reviews
 new_reviews = []
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    email = request.json.get('email')
-    password = request.json.get('password')
+    if request.method == 'GET':
+        return render_template("login.html")
+    else:
+        email = request.json.get('email')
+        password = request.json.get('password')
 
-    user = next((u for u in users if u['email'] == email and u['password'] == password), None)
-    
-    if not user:
-        print(f"User not found or invalid password for: {email}")
-        return jsonify({"msg": "Invalid credentials"}), 401
+        user = next((u for u in users if u['email'] == email and u['password'] == password), None)
+        
+        if not user:
+            print(f"User not found or invalid password for: {email}")
+            return jsonify({"msg": "Invalid credentials"}), 401
 
-    access_token = create_access_token(identity=user['id'])
-    return jsonify(access_token=access_token)
+        access_token = create_access_token(identity=user['id'])
+        return jsonify(access_token=access_token)
 
-@app.route('/places', methods=['GET'])
-def get_places():
+@app.route('/data_place', methods=['GET'])
+def get_data_place():
     response = [
         {
             "id": place['id'],
@@ -51,6 +57,10 @@ def get_places():
         for place in places
     ]
     return jsonify(response)
+
+@app.route('/places', methods=['GET'])
+def get_places():
+    return render_template("index.html")
 
 @app.route('/places/<place_id>', methods=['GET'])
 def get_place(place_id):
@@ -98,6 +108,17 @@ def add_review(place_id):
 
     new_reviews.append(new_review)
     return jsonify({"msg": "Review added"}), 201
+
+@app.route('/countries', methods=['GET'])
+def get_countries():
+        response = [
+        {
+            "code": country['code'],
+            "name": country['name']
+        }
+        for country in countries
+    ]
+        return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True)
